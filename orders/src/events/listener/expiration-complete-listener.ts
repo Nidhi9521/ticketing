@@ -9,6 +9,7 @@ import { queueGroup } from "./queue-group-name";
 export class ExpirationCompleteListener extends Listener<ExpirationCompleteEvent>{
     subject: Subjects.ExpirationComplete = Subjects.ExpirationComplete;
     async onMessage(data: ExpirationCompleteEvent['data'], msg: Message) {
+
         const order = await Order.findById(data.orderId).populate('ticket');
 
         if (!order) {
