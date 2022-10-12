@@ -1,4 +1,6 @@
 import mongoose from "mongoose";
+
+
 import {password} from "../services/password"
 interface UserAttrs{
     email:String
